@@ -1,0 +1,50 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-22.04",
+  "features": {
+      "ghcr.io/devcontainers/features/python:1": {
+          "version": "os-provided",
+          "installJupyterlab": "true",
+          "configureJupyterlabAllowOrigin": "*",
+          "useOryxIfAvailable": "false"
+      }
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "python3 -m pip install -r requirements.txt",
+  "postCreateCommand": "",
+  "customizations": {
+    "codespaces": {
+      "openFiles": []
+    },
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/python/current/bin/python3",
+        "jupyter.kernels.filter": [
+          {
+            "path": "/opt/conda/bin/python",
+            "type": "pythonEnvironment"
+          },
+          {
+            "path": "/usr/local/python/current/bin/python3",
+            "type": "pythonEnvironment"
+          },
+          {
+            "path": "/usr/local/python/current/bin/python",
+            "type": "pythonEnvironment"
+          },
+          {
+            "path": "/usr/bin/python3",
+            "type": "pythonEnvironment"
+          },
+          {
+            "path": "/bin/python3",
+            "type": "pythonEnvironment"
+          }
+        ]
+      },
+      "extensions": [
+        "ms-toolsai.jupyter",
+        "ms-python.python"
+      ]
+    }
+  }
+}
